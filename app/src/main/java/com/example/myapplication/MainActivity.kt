@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,10 +10,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var text1:TextView
     private var operation =" "
     private var operand = 0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        text1=findViewById(R.id.TextView)
+        text1=findViewById(R.id.textview)
     }
     fun onclicl(clickedview: View){
         if (clickedview is TextView){
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             if (text =="0"){
                 text=" "
             }
-            text1=text=text + number
+            text1.text=text + number
         }
     }
     fun operationClicl(clickedview: View){
